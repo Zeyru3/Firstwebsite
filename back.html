@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Group 5-4:Online Barbecue</title>
+    <style>
+       body{
+           background:alicewhite;
+           background:#bfbfff;
+       }
+       
+      #menu{
+          border:solid black 1px;
+          width:90%;
+          margin:auto; 
+          text-align:center;
+          margin-top:20px;
+          background:#24292b;
+          color:white;
+          font-family:serif;
+          box-shadow:-15px 15px 20px #6185a7;
+                             
+      }
+      
+      #menu h1{
+          color:#ff7455;
+      }
+      
+      #bi{
+         border:solid white 2px;
+         width:97%;
+         margin:auto;
+         margin-top:10px;
+         margin-bottom:10px;
+      }
+      
+      h1, h2{
+          padding:10px;          
+      }
+      
+      #trans{
+          margin:0;
+          padding:0;
+          width:90%;
+          margin:auto; 
+          margin-top:40px; 
+          border-radius:30px;          
+          border:solid black 2px;     
+          background:#dfd5ff;    
+          border-bottom-right-radius:0;
+          border-bottom-left-radius:0;
+          box-shadow:-15px 15px 20px #6185a7; 
+      } 
+      
+      #wo{
+          font-family:serif;
+          background:#24292b ;
+          color:white;
+          text-align:center;
+          border-radius:25px;
+          padding:5px;
+          Width:90%;
+          margin:auto;
+          margin-top:20px;
+      } 
+      
+      #bi2{
+         border:solid white 2px;
+         width:97%;
+         margin:auto;
+         margin-top:10px;
+         margin-bottom:10px;
+         border-radius:25px;
+      }
+      
+      label{
+          padding:0;
+          margin:0;
+          margin-left:10px;
+          margin-top:10px;
+          
+      }
+      input{
+          background:white;
+          width:90%;
+          height:50px;
+          border-color:green;
+          font-size:30px;
+          margin-top:20px;
+          border-radius:10px; 
+          margin-left:11px;
+      }
+      
+      
+      input:invalid{
+          border-color:red;
+      }
+      
+      #order, #btn2{
+          background:#ff5f2b;
+          color:white;
+          height:60px;
+          border-color:green;
+          font-size:30px;
+          margin-top:20px;
+          border-radius:10px; 
+          margin-left:11px;
+          font-weight:5px;
+          width:90%;
+      }
+      
+      #bbtn{
+          text-align:center;
+          margin-top:10px;
+          margin-bottom:20px;
+      }
+      
+      #botcashier,#opr{
+          background:aliceblue;
+          border:solid black 1px;
+          width:80%;
+          margin:auto; 
+          text-align:center;
+          color:black;
+          font-family:serif;     
+          margin-bottom:10px;        
+          margin-top:0;
+          margin-top:20px; 
+      }
+      #botcashier{
+            margin-top:20px;      
+      }
+      
+      #mach{
+          width:90%;
+          margin:auto; 
+          border:solid black 2px;
+          height:15px;
+          background:grey;
+          border-bottom-right-radius:15px;
+          border-bottom-left-radius:15px; 
+          box-shadow:-15px 15px 20px #6185a7;
+      }
+      #orp{
+          background:white;
+          width:60%;
+          margin:auto;
+          border:solid black 2px;
+          overflow:hidden;   
+          margin-bottom:50px;   
+          border-bottom:dotted black 2px;
+          border-top:dotted black 2px;
+          box-shadow:-15px 15px 20px #6185a7;
+             
+      }
+      a{
+          color:white;
+          text-decoration:none;
+      }
+      #extra{
+          background:white;
+          height:7px;
+          width:67%;
+          margin:auto;
+          margin-top:6px;
+          border:solid black 3px;
+      }
+    </style>   
+</head>
+
+<body>
+    <div>
+       
+        <br><div id="menu"> 
+            <div id="bi">
+            <h1>MENU</h1>
+            <h2>Dinugoan ----------- ₱5.00</h2>
+            <h2>Isaw ----------------- ₱3.00</h2>
+            <h2>Hotdog ----------- ₱10.00</h2>
+           
+            <h1>PROMO</h1>
+            <h2 style="margin-bottom:50px;">Random Order ---------- ₱6.00</h2>
+        </div>
+        </div>
+        
+        <div id="trans">
+            <br><div id="wo">
+                <div id="bi2">
+                <h1>WHAT WOULD YOU LIKE TO ORDER? </h1>
+            </div>
+            
+            </div>
+           <div style="text-align:center;"> <h3 style="color:red;margin:0;margin-top:10px;">Note:The first letter of your order must be in capital letter. </h3></div>
+            <h2>
+              <div id="botcashier"></div>
+            </h2> 
+               <input type="text" required id="ord" placeholder="Enter your order:" oninput="recall1(this.value,quan.value);">
+                 <h1>
+                  <label>
+                      Quantity:<br> 
+                      <input type="number" id="quan" required oninput="recall1(ord.value,quan.value);" placeholder="Enter quantity:" >
+                  </label><br><br>
+<label>Pay:
+                  <input type="number" id="p" placeholder="Insert money:" required>
+                  <div id="bbtn">
+                  <button id="order" onclick="calc(ord.value,quan.value,p.value)">--------------------Order--------------------</button>
+                  <a href="orderProgram.html"><button id="btn2">--------------------New Order---------------------</a>
+                 
+                </h1>     
+        </div>
+         <div id="mach"><div id="extra"></div></div>   
+        <h2 style="margin:0;padding:0;">
+           <div id="orp"><br>
+               <table style="text-align:center;">
+        <thead>
+            <tr>
+                <th colspan="10">
+                    <h2 id="gr"></h2>
+                     <h3 id="divt"></h3>
+                    <h4 id="o"></h4>
+                </th>
+            </tr>
+            <tr>
+                <th id="oty"></th>
+                <th id="item"></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th id="tot"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="oty1"></td>
+                <td id="item1"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="tot1"></td>
+                
+            </tr>
+            <tr style="color:white;">
+                <td id="invi"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>                
+            </tr>
+             <tr style="color:white;">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>                
+            </tr>           
+            <tr>
+               
+                <td id="bs"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="tot2"></td>              
+            </tr>
+                <td id="t"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="tot3"></td>              
+            </tr>
+            </tr>
+                <td id="payment"</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="tot4"></td>              
+            </tr>
+            </tr>
+                <td id="cd"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="tot5"></td>              
+            </tr>
+            
+        </tbody>
+    </table>
+     <table>
+        <thead>
+            <tr>
+                <th colspan="0">            
+                                                 <h3 id="divb"></h3>
+                    <h4 id="ty"></h4>
+                </th>
+            </tr>
+                </thead>
+                </table> 
+           </div>
+        </h2> 
+    <script>
+       function recall1(x, y){
+          
+          
+          if(x=="Dinugoan" && y>0){
+               botcashier.innerHTML="Good day costumer! Your order is Dinugoan and the quantity is "+y+". The total amount that you need to pay is <p style=color:red;padding:0;margin:0; >₱"+y*5+"</p>";
+           }
+           
+           else if(x=="Isaw" && y>0){
+             botcashier.innerHTML ="Good day costumer! Your order is Isaw and the quantity is "+y+". The total amount that you need to pay is <p style=color:red;padding:0;margin:0; >₱"+y*3+"</p>";
+           }
+           else if(x=="Hotdog" && y>0){
+             botcashier.innerHTML="Good day costumer! Your order is Hatdog and the quantity is "+y+". The total amount that you need to pay is <p style=color:red;padding:0;margin:0; >₱"+y*10+"</p>";
+           }
+           else if(x=="Random Order" || x=="random order" || x=="Random order" || x=="RANDOM ORDER" && y>0){
+                   botcashier.innerHTML="Good day costumer! Your order is Random Order and the quantity is "+y+". The total amount that you need to pay is <p style=color:red;padding:0;margin:0; >₱"+y*6+"</p>";
+           }
+           else if(x=="" && y>0){
+               botcashier.innerHTML="Good day costumer! Please enter your order";
+           }
+            else if(x=="" && y==""){
+              botcashier.innerHTML="";
+           }
+           
+           }    
+           
+           
+           function calc(a, b, c){
+           var ordersran=["Dinugoan", "Isaw", "Hotdog"];
+             var rof=Math.floor(Math.random() * ordersran.length);
+           
+              if(a=="Dinugoan"){
+                  let cost =b*5;
+                  if(c < cost){
+                      botcashier.innerHTML="Your money is not enough, please insert more money.The amount that you need to pay is <p style=color:red;padding:0;margin:0; >₱"+cost+"</p>";
+                  }
+                  if(c >= cost){
+                      
+                      p.value=(c-cost);
+                      gr.innerHTML="Group 5-4 Barbecue ";       
+             divt.innerHTML="-------------------------------------------------"
+                      o.innerHTML="--Order-- "
+                      oty.innerHTML="OTY"
+                      item.innerHTML="ITEM"
+                      tot.innerHTML="Total"
+                      oty1.innerHTML=b+"pcs";
+                      tot1.innerHTML="₱"+cost;
+                       item1.innerHTML="Dinugoan";
+                       invi.innerHTML="TABLE DATA"
+                       bs.innerHTML="barbecue sold"
+                       tot2.innerHTML=b+"pcs";
+                       t.innerHTML="Total"
+                       tot3.innerHTML="₱"+cost;
+                       payment.innerHTML="Payment";
+                       tot4.innerHTML="₱"+c;
+                       cd.innerHTML="Change due";
+                       tot5.innerHTML="₱"+(c-cost) ;
+                       divb.innerHTML="------------------------------------------------"
+                       ty.innerHTML="Thank you for buying our barbecue!";
+                  }
+              }
+                  
+              else if(a=="Isaw"){
+                  let cost =b*3;
+                  if(c < cost){
+                      botcashier.innerHTML="Your money is not enough, please insert more money.The amount that you need to pay is <p style=color:red;padding:0;margin:0; >₱"+cost+"</p>";
+                  }
+                  else if(c >= cost){
+                   p.value=(c-cost);
+                      gr.innerHTML="Group 5-4 Barbecue ";       
+             divt.innerHTML="-------------------------------------------------"
+                      o.innerHTML="--Order-- "
+                      oty.innerHTML="OTY"
+                      item.innerHTML="ITEM"
+                      tot.innerHTML="Total"
+                      oty1.innerHTML=b+"pcs";
+                      tot1.innerHTML="₱"+cost;
+                       item1.innerHTML="Isaw";
+                       invi.innerHTML="TABLE DATA"
+                       bs.innerHTML="barbecue sold"
+                       tot2.innerHTML=b+"pcs";
+                       t.innerHTML="Total"
+                       tot3.innerHTML="₱"+cost;
+                       payment.innerHTML="Payment";
+                       tot4.innerHTML="₱"+c;
+                       cd.innerHTML="Change due";
+                       tot5.innerHTML="₱"+(c-cost);
+                       divb.innerHTML="------------------------------------------------"
+                       ty.innerHTML="Thank you for buying our barbecue!";
+                  }
+              }
+                     else if(a=="Hotdog"){
+                  let cost =b*10;
+                  if(c < cost){
+                      botcashier.innerHTML="Your money is not enough, please insert more money.The amount that you need to pay is <p style=color:red;padding:0;margin:0; >₱"+cost+"</p>";
+                  }
+                  else if(c >= cost){
+                      p.value=(c-cost);
+                      gr.innerHTML="Group 5-4 Barbecue ";       
+             divt.innerHTML="-------------------------------------------------"
+                      o.innerHTML="--Order-- "
+                      oty.innerHTML="OTY"
+                      item.innerHTML="ITEM"
+                      tot.innerHTML="Total"
+                      oty1.innerHTML=b+"pcs";
+                      tot1.innerHTML="₱"+cost;
+                       item1.innerHTML="Hotdog";
+                       invi.innerHTML="TABLE DATA"
+                       bs.innerHTML="barbecue sold"
+                       tot2.innerHTML=b+"pcs";
+                       t.innerHTML="Total"
+                       tot3.innerHTML="₱"+cost;
+                       payment.innerHTML="Payment";
+                       tot4.innerHTML="₱"+c;
+                       cd.innerHTML="Change due";
+                       tot5.innerHTML="₱"+(c-cost) ;
+                       divb.innerHTML="------------------------------------------------"
+                       ty.innerHTML="Thank you for buying our barbecue!";
+                  }
+              }
+              
+               else if(a=="Random Order" || a=="random order" || a=="Random order" || a=="RANDOM ORDER"){
+                 
+                  let cost =b*6;
+                  if(c < cost){
+                      botcashier.innerHTML="Your money is not enough, please insert more money.The amount that you need to pay is <p style=color:red;padding:0;margin:0; >₱"+cost+"</p>";
+                  }
+                  else if(c >= cost){
+                      p.value=(c-cost);
+                      gr.innerHTML="Group 5-4 Barbecue ";       
+             divt.innerHTML="-------------------------------------------------"
+              
+              item1.innerHTML=ordersran[rof];
+                      o.innerHTML="--Order-- "
+                      oty.innerHTML="OTY"
+                      item.innerHTML="ITEM"
+                      tot.innerHTML="Total"
+                      oty1.innerHTML=b+"pcs";
+                      tot1.innerHTML="₱"+cost;
+                       invi.innerHTML="TABLE DATA"
+                       bs.innerHTML="barbecue sold"
+                       tot2.innerHTML=b+"pcs";
+                       t.innerHTML="Total"
+                       tot3.innerHTML="₱"+cost;
+                       payment.innerHTML="Payment";
+                       tot4.innerHTML="₱"+c;
+                       cd.innerHTML="Change due";
+                       tot5.innerHTML="₱"+(c-cost) ;
+                       divb.innerHTML="------------------------------------------------"
+                       ty.innerHTML="Thank you for buying our barbecue!";
+                  }
+              }
+                 
+                 
+           }
+    </script>
+    
+</body>
+</html> 
